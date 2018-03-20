@@ -17,7 +17,7 @@
 >那docker到底是什么东西呢：
 
 ```
-1. 集装箱，可以把你的业务随意，无拘无束的运行在任何地方（Build，Ship，and Run Any App， Anywhere），即可移植性强
+1. 集装箱，可以把你的业务随意，无拘无束的运行在任何地方（Build，Ship，and Run Any App，Anywhere），即可移植性强
 2. 用于不同项目隔离不同的开发环境，开发库等
 3. 执行环境可移植，运维部署只需要你提供注入了代码的docker容器即可
 ```
@@ -34,8 +34,19 @@ docker包含的三个基本概念，<u>镜像(Images)、容器(Container)和仓�
 docker镜像可以看作是一个特殊的文件系统，除了提供容器运行时必须要的程序，库，资源，配置等文件外，还提供为运行时准备的一些配置参数(如匿名卷，环境变量等)。镜像不包含任何动态数据，其内容在构建之后也不会被改变
 ```
 
+>自己还没研究透，先暂时引用第三方的文章： [地址](http://dockone.io/article/783)
+
+![镜像](images/docker-images.png)
+![容器](images/docker-container.png)
+要点：容器 = 镜像 + 读写层。并且容器的定义并没有提及是否要运行容器。
+
+
 ***
 
+###### 贴一张docker命令导图
+![导图](images/docker-command.jpg)
+
+***
 ##### 使用docker命令完成以下操作：
 
 ###### 安装docker
