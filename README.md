@@ -3,6 +3,7 @@
 
 1. [git知识库](git.md)
 2. [docker知识库](docker/docker.md)
-3. ** Django知识库 **
+3. Django知识库
 - [django概念介绍](django/django_pattern.md)
+- [django第一个项目](django/django_halloWorld.md)
 
