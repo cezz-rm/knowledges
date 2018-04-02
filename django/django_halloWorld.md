@@ -12,7 +12,7 @@
 
 ##### 1. 首先创建一个运行Django项目的虚拟环境(virtualenv)
 
-虚拟环境的创建在基础课程中讲解，[地址](django/python_virtualenv.md)
+虚拟环境的创建在基础课程中讲解，[地址](python_virtualenv.md)
 该虚拟环境中有django库，python3，pymysql等等需要的库
 
 ##### 2. 创建一个Django项目
@@ -53,8 +53,9 @@ python manage.py startapp hallo_app
 ##### 3. settings.py配置文件详细解读
 
 ###### a) 设置语言： 	
-LANGUAGE_CODE = 'zh' 表示中文
-LANGUAGE_CODE = 'en' 表示英文
+LANGUAGE_CODE = 'zh-hans' 表示中文
+LANGUAGE_CODE = 'en-us' 表示英文
+
  ![图](images/django_zh.png)
 
 设置时区：	TIME_ZONE = 'Asia/Shanghai'
