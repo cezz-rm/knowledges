@@ -11,7 +11,7 @@
 
 #### 修改mysql配置
 
-#####1. 在settings.py中配置数据库连接信息
+##### 1. 在settings.py中配置数据库连接信息
 ```
 'ENGINE':'django.db.backends.mysql',
 'NAME':'',           #数据库名
@@ -21,7 +21,7 @@
 'PORT':'3306',       #端口
 ```
 
-#####2. mysql数据库中创建定义的数据库
+##### 2. mysql数据库中创建定义的数据库
 a) 进入mysql
 ```
 mysql -u root -p
@@ -31,7 +31,7 @@ b) 创建数据库
 create database xxx charset=utf-8;
 ```
 
-#####3. 配置数据库链接
+##### 3. 配置数据库链接
 
 
 a) 安装pymysql
@@ -46,7 +46,7 @@ import pymysql
 pymysql.install_as_MySQLdb()
 ```
 
-#####4. 定义模型
+##### 4. 定义模型
 
 ######重要概念：模型，表，属性，字段
 
@@ -85,7 +85,7 @@ python manage.py migrate
 ORM(Objects Relational Mapping)对象关系映射，是一种程序技术，用于实现面向对象编程语言里不同类型系统的数据之间的转换。可以简单理解为翻译机。
 
 
-![图](django_models.jpg)
+[图](django_models.jpg)
 
 
 
