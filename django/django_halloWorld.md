@@ -37,12 +37,31 @@ urls.py：项目的URL路由映射，实现客户端请求url由哪个模块进�
 
 wsgi.py：定义WSGI接口信息，通常本文件生成后无需改动
 
+2.2 运行Django项目
+```
+python manage.py runserver 端口
+```
+该命令是运行项目，端口可以不用写，启动的时候会默认随机创建一个可以使用的端口
+
 2.2 创建app
 ```
 python manage.py startapp hallo_app
 ```
 该命令是在blog工程下创建一个名为hallo_app的app
 
+
+##### 3. settings.py配置文件详细解读
+
+###### a) 设置语言： 	
+LANGUAGE_CODE = 'zh' 表示中文
+LANGUAGE_CODE = 'en' 表示英文
+ ![图](images/django_zh.png)
+
+设置时区：	TIME_ZONE = 'Asia/Shanghai'
+
+###### b) 时区解释： (需要详细回顾思考时区问题)
+UTC：世界标准时间，也就是平常说的零时区。
+北京时间表示东八区时间，即UTC+8
 
 
 

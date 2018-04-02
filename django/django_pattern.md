@@ -8,7 +8,7 @@
 
 ---
 
-###Django简介： 
+### Django简介：
 [Django官网地址](https://www.djangoproject.com/)
 
 Django发布于2005年7月，是当前Python世界里最有名且成熟的网络框架。 最初是被开发用于管理劳伦斯出版集团旗下的以新闻内容为主的网站的，即CMS(内容管理系统)软件。
@@ -37,6 +37,15 @@ Controller: 即<font color=red>业务逻辑层</font>。负责从用户端收集
 
 浏览器中MVC的表现形式图解
 ![图](images/mvc_request_response.png)
+
+简单的描述:
+
+```
+比如同样是跑 Android 系统的电脑，可以做成手机，可以做成笔记本，还可以做成机顶盒。
+无非就是 View 换成显示器，液晶屏，还是电视机。
+Controller换成触摸屏，键盘，还是遥控器的问题。
+本质上其实是同一个 Model (Android 电脑)。
+```
 
 ***
 
