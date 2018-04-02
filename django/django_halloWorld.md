@@ -12,7 +12,7 @@
 
 ##### 1. 首先创建一个运行Django项目的虚拟环境(virtualenv)
 
-虚拟环境的创建在基础课程中讲解，[地址]()
+虚拟环境的创建在基础课程中讲解，[地址](django/python_virtualenv.md)
 该虚拟环境中有django库，python3，pymysql等等需要的库
 
 ##### 2. 创建一个Django项目
