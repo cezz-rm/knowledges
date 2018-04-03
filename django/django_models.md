@@ -89,11 +89,11 @@ ORM(Objects Relational Mapping)对象关系映射，是一种程序技术，用�
 
 ##### 7.模型查询
 
-a) 模型成员objects
+###### a) 模型成员objects
 
 Django默认通过模型的objects对象实现模型数据查询
 
-b) 过滤器
+###### b) 过滤器
 
 查询集表示从数据库获取的对象集合
 
@@ -116,7 +116,7 @@ Django有两种过滤器用于筛选记录
 	order_by()       排序
 	values()         一条数据就是一个字典，返回一个列表
 
-c) 查询单个数据
+###### c) 查询单个数据
 
 get()：返回一个满足条件的对象。如果没有返回符合条件的对象，会应该模型类DoesNotExist异常，如果找到多个，会引发模型类MultiObjectsReturned异常
 
@@ -129,12 +129,12 @@ count()：返回当前查询集中的对象个数
 exists()：判断查询集中是否有数据，如果有数据返回True，没有返回False
 
 
-d) 限制查询集
+###### d) 限制查询集
 限制查询集，可以使用下表的方法进行限制，等同于sql中的limit
 
  模型名.objects.all()[0:5] 小标不能为负数
 
-e) 字段查询
+###### e) 字段查询
 对sql中的where实现，作为方法，filter(),exclude()，get()的参数
 
 语法：属性名称__比较运算符 = 值
@@ -143,7 +143,7 @@ e) 字段查询
 
 注意：like语句中使用%表示通配符。比如sql语句查询  where name like '%xxx%'，等同于filter(name_contains='xxx')
 
-f) 比较运算符
+###### f) 比较运算符
 
 contains：是否包含，大小写敏感
 startswith，endswith：以values开头或者结尾，大小写敏感
@@ -157,7 +157,9 @@ gt，gte，lt，lte：大于，大于等于，小于，小于等于。filter(age
 
 pk：代表主键，也就是id。filter(pk=1)
 
-g) 聚合函数
+
+###### g) 聚合函数
+ 
 
 ggregate()函数返回聚合函数的值
 
@@ -173,7 +175,7 @@ Sum：求和
 
 例如:  Student.objects.aggregate(Max('age'))
 
-h) F对象/Q对象
+###### h) F对象/Q对象
 F对象:可以使用模型的A属性与B属性进行比较
 背景:在模型中有两个字段，分别表示学生成绩A与成绩B，要对成绩AB进行比较计算，就需要使用到F对象。
 例如有如下例子，班级中有女生个数字段以及男生个数字段，统计女生数大于男生数的班级可以如下操作:
