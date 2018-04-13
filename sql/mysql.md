@@ -44,17 +44,17 @@ RDBMS即关系数据库管理系统(Relational Database Management System)的特
 
 安装参数
 ```
- MySQL - MySQL服务器。你需要该选项，除非你只想连接运行在另一台机器上的MySQL服务器。
+MySQL - MySQL服务器。你需要该选项，除非你只想连接运行在另一台机器上的MySQL服务器。
 MySQL-client - MySQL 客户端程序，用于连接并操作Mysql服务器。
 ```
 
 
-#### 安装mysql:
+#### 1.安装mysql:
 ```
 sudo apt-get install mysql mysql-client
 ```
 
-#### 使用Mysql客户端进行连接Mysql的命令
+#### 2.使用Mysql客户端进行连接Mysql的命令
 
 先使用mysql命令连接到mysql的服务器，输入安装的时候自己设置的密码
 ```
@@ -65,9 +65,9 @@ mysql -u root -p
 如下就是进入mysql中的图：
 ![图](images/mysql-root.jpg)
 
-#### 简单的SQL命令
+#### 3.简单的SQL命令
 
-##### 查看当前mysql中有那些数据库
+##### 3.1查看当前mysql中有那些数据库
 
 ```
 show databases;
@@ -77,13 +77,15 @@ show databases;
 
 
 
-##### 创建自定义的数据库
+##### 3.2创建自定义的数据库
 
 创建数据库的时候，需要指定编码charset=utf-8,要不然存储中文会出现乱码
+
 ```
 create database charset=utf8;
 ```
-![图](images.mysql-create-databases.jpg)
+
+![图](images/mysql-create-databases.jpg)
 
 注意：重复创建同一个数据库是会提示你，数据库已经存在了
 
