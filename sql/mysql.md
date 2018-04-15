@@ -325,15 +325,15 @@ delete from student where name='xxx';
     按字段将记录分组，通常和其它的函数联合使用，group by 操作后，返回每一组的第一条记录
 
    2）order by:根据指定字段进行排序，默认升序(asc)排序，可以指定多个排序字段，按照字段先后分别排序。
-
-   3) sum(expr):求和
-
-   4) avg(expr):求平均数
-
-   5) count(expr):计数器，返回SELECT语句检索到的行中非NULL值的数目
    
-   6) max(expr) 获取最大值
+   3）sum(expr):求和
 
-   7) min(expr) 获取最小值
+   4）avg(expr):求平均数
+
+   5）count(expr):计数器，返回SELECT语句检索到的行中非NULL值的数目
+   
+   6）max(expr) 获取最大值
+
+   7）min(expr) 获取最小值
 
 
