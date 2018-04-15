@@ -40,6 +40,11 @@ RDBMS即关系数据库管理系统(Relational Database Management System)的特
     索引：使用索引可快速访问数据库表中的特定信息。索引是对数据库表中一列或多列的值进行排序的一种结构。类似于书籍的目录。
     参照完整性: 参照的完整性要求关系中不允许引用不存在的实体。与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性。
 
+### window上Mysql安装
+
+下载安装地址[mysql地址](https://www.mysql.com/)
+
+
 ### ubuntu上Mysql安装
 
 安装参数
@@ -110,6 +115,7 @@ drop database test;
 ```
 
 ![图](images/mysql-drop-database.jpg)
+
 注意：删除重复的同一个数据库的时候是会提醒你，数据库不存在了
 
 改进方案：
@@ -133,11 +139,13 @@ use test;
 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。 
 
 数值类型：
+<br>
 ![图](images/mysql-types.jpg)
 
 日期和时间类型：
 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
 每个时间类型有一个有效值范围和一个"零"值，当指定不合法的MySQL不能表示的值时使用"零"值。
+<br>
 ![图](images/mysql-types-date.jpg)
 
 字符串类型：
@@ -184,9 +192,8 @@ create table `student`(
 
 ***
 
-#### 4. 高级SQL命令
 
-##### 4.1 增数据
+##### 3.7增数据
 语法：
     inset into table_name (file1, file2, file3) values (value1, value2, value3)
 
@@ -196,10 +203,57 @@ insert into `student` (`name`) values('coco');
 ![图](images/mysql-insert.jpg)
 
 
-##### 4.2 删数据
+
+##### 3.8查数据
+
+语法：
+    select column_name1, column_name2 
+    from table_name
+    [where]
+    [limit n] [offset m]
+
+注解：
+
+    1）查询语句中你可以使用一个或者多个表，表之间使用逗号(,)分割，并使用WHERE语句来设定查询条件。
+    2）SELECT 命令可以读取一条或者多条记录。
+    3）可以使用星号（*）来代替其他字段，SELECT语句会返回表的所有字段数据
+    4）可以使用 WHERE 语句来包含任何条件。
+    5）可以使用 LIMIT 属性来设定返回的记录数。
+    6）可以通过OFFSET指定SELECT语句开始查询的数据偏移量。默认情况下偏移量为0。
+
+```
+select id,name from student where name='coco';
+```
+![图](images/mysql-select.jpg)
+
+<br>
+
+##### 3.9改数据
+
+语法：
+    update table_name set field1=value1 fields2=value2 
+    [where]
+
+注解： 
+    1) 可以同时更新一个或多个字段。
+    2) 可以在 WHERE 子句中指定任何条件。
+
+```
+update student set name='xxx' where id=1;
+```
+![图](images/mysql-update.jpg)
+<br>
 
 
-##### 4.3 改数据
+##### 3.10删数据
+语法：
+    delete from table_name [where]
+注解：
+    1）如果没有指定 WHERE 子句，MySQL 表中的所有记录将被删除。
+
+```
+delete from student where name='xxx';
+```
+![图](images/mysql-delete.jpg)
 
 
-##### 4.4 查数据
