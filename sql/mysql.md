@@ -149,6 +149,7 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 ![图](images/mysql-types-date.jpg)
 
 字符串类型：
+<br>
 ![图](images/mysql-types-str.jpg)
 
 
@@ -171,7 +172,7 @@ create table `student`(
 )engine=InnoDB default charset=utf8;
 ```
 
-![图](images/mysql-create-tables.jpg)
+![图](images/mysql-create-table.jpg)
 
 解析：
 1. 如果你不想字段为空 可以设置字段的属性为 NOT NULL， 在操作数据库时如果输入该字段的数据为NULL ，就会报错。
@@ -246,8 +247,10 @@ update student set name='xxx' where id=1;
 
 
 ##### 3.10删数据
+
 语法：
     delete from table_name [where]
+
 注解：
     1）如果没有指定 WHERE 子句，MySQL 表中的所有记录将被删除。
 
