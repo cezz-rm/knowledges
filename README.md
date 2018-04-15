@@ -6,8 +6,9 @@
 3. [数据库知识库]
  - [第一天:基础]
    - [Mysql数据库基础语法](sql/mysql.md)
- - [第二天:提升]
-   - [复杂语法](sql/mysql2.md)
+ - [第二天:提升练习]
+   - [语法练习1](sql/mysql2_1.md)
+   - [语法练习2](sql/mysql2_2.md)
  - [第三天:mysql与python交互]
    - [交互](sql/mysql3.md)
 4. Django知识库

@@ -260,3 +260,80 @@ delete from student where name='xxx';
 ![图](images/mysql-delete.jpg)
 
 
+#### 4.进阶
+
+##### 4.1 主键
+
+语法：
+    alter table table_name add primary KEY(primary_key_column);
+
+注解：
+1）简单而言，主键就是一个用来唯一标识表中的每行记录
+2）主键的值必须是唯一的，非空的，每个表只有一个主键
+3）主键的数据类型，int 类型
+4）主键通常设为 auto_increment，自动生成唯一的序列值
+
+
+##### 4.2 外键
+
+    一张表中有一个非主键的字段指向了别一张表中的主键，就将该字段叫做外键。
+
+语法：
+
+    alter table table_name1 add [constraint 外键名] foreign key(外键字段名) references table_name2(主键字段名);
+
+使用外键的前提：
+
+　　1. 表储存引擎必须是innodb，否则创建的外键无约束效果。
+
+　　2. 外键的列类型必须与父表的主键类型完全一致。
+
+　　3. 外键的名字不能重复。
+
+　　4. 已经存在数据的字段被设为外键时，必须保证字段中的数据与父表的主键数据对应起来。
+
+
+##### 4.3索引
+
+
+什么是索引：
+    MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。打个比方，如果合理的设计且使用索引的MySQL是一辆兰博基尼的话，那么没有设计和使用索引的MySQL就是一个人力三轮车。
+    实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录。
+但过多的使用索引将会造成滥用。因此索引也会有它的缺点：虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE。因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件。
+
+
+创建语法：
+    create index [index_name索引名] on table_name([column_name 列名]);
+
+
+删除语法：
+    drop index [index_name 索引名] on table_name;
+
+
+查看语法：
+   show index from table_name;
+
+修改语法：
+  alter table table_name add unique [index_name 索引名]
+ 
+##### 4.4聚合函数
+
+什么是聚合函数：
+   对统计的结果进行二次筛选：分组，排序，算和，计算最大值，最小值，求取平均值等
+
+   1）group by 字段 ：
+    按字段将记录分组，通常和其它的函数联合使用，group by 操作后，返回每一组的第一条记录
+
+   2）order by:根据指定字段进行排序，默认升序(asc)排序，可以指定多个排序字段，按照字段先后分别排序。
+
+   3) sum(expr):求和
+
+   4) avg(expr):求平均数
+
+   5) count(expr):计数器，返回SELECT语句检索到的行中非NULL值的数目
+   
+   6) max(expr) 获取最大值
+
+   7) min(expr) 获取最小值
+
+
