@@ -15,6 +15,7 @@
 
 ##### 表创建/数据准备
 
+```
 -- 创建人力资源管理系统数据库
 drop database if exists HR;
 create database HR default charset utf8;
@@ -60,10 +61,11 @@ insert into TbEmp values (4466, '苗人凤', '销售员', 3344, 2500, 30);
 insert into TbEmp values (3244, '欧阳锋', '程序员', 3088, 3200, 20);
 insert into TbEmp values (3577, '杨过', '会计', 5566, 2200, 10);
 insert into TbEmp values (3588, '朱九真', '会计', 5566, 2500, 10);
-
+```
 
 ##### 题目练习
 
+```
 -- 查询薪资最高的员工姓名和工资
 select ename, sal from TbEmp where sal=(select max(sal) from TbEmp);
 -- 查询员工的姓名和年薪(月薪*12)
@@ -103,21 +105,4 @@ select ename, sal from TbEmp order by sal desc limit 3 offset 0;
 select ename, sal from TbEmp order by sal desc limit 3,5;
 select ename, sal from TbEmp order by sal desc limit 5 offset 3;
 
-
--- 创建用户和授权
-drop user 'jackfrued';
-create user 'jackfrued'@'%'identified by '123456';
-grant all privileges on *.* to 'jackfrued'@'%' with grant option;
-
--- 创建索引
-create index IdxStuName on TbEmp (ename);
--- 查看索引
-show index from TbEmp;
-
--- 创建视图
-create or replace view VwDeptEmpCount as
-select dno as `部门编号`, count(dno) as `部门人数` from TbEmp group by dno;
-select * from VwDeptEmpCount;
-create or replace view VwEmpDetail as
-select ename as `姓名`, job as `职位`, dname as `部门` from TbEmp as t1 inner join TbDept as t2 on dno=deptno;
-select * from VwEmpDetail;
+```
