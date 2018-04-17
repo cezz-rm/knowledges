@@ -83,7 +83,7 @@ mysql作为主存储，redis作为辅助存储被用作缓存，加快访问读�
    ```
    # requirepass foobared
   ```
-  如果取消该注释，修改foobared的值新的密码值，并保存文件，则说明redis重启以后需要输入新设置的密码登录
+  如果取消该注释，修改foobared的值新的密码值，并保存文件，则说明redis重启以后需要输入新设置的密码newfoobared登录
   
   ```
    requirepass newfoobared
