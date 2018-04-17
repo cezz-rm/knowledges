@@ -51,8 +51,9 @@ pip install PyMySQL
     import pymysql
 
     # 打开数据库连接
-    db = pymysql.connect("localhost IP地址","root账号","password密码","TEST数据库" )
-
+    #db = pymysql.connect("localhost IP地址","root账号","password密码","TEST数据库", 3306 端口)
+    db = pymysql.Connect(host='localhost', port=3306, user='root', passwd='123456', db='srs', charset='utf8')
+    
     # 使用 cursor() 方法创建一个游标对象 cursor
     cursor = db.cursor()
 
