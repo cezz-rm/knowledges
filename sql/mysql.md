@@ -280,7 +280,7 @@ delete from student where name='xxx';
 
 语法：
 
-    alter table table_name1 add [constraint 外键名] foreign key(外键字段名) references table_name2(主键字段名);
+    alter table table_name1 add [constraint 索引名] foreign key(外键字段名) references table_name2(主键字段名);
 
 使用外键的前提：
 
@@ -335,5 +335,85 @@ delete from student where name='xxx';
    6）max(expr) 获取最大值
 
    7）min(expr) 获取最小值
+   
 
+#### 5. 其他查询方法
+
+##### 5.1 介于什么之间
+
+关键字：between  and 
+作用：用来查询过滤信息，在一个范围内的搜素结果。
+
+##### 5.2 模糊查询
+1）关键字： like
+作用：用来模糊查询
+
+例如： 查询学生表中姓王的同学
+```
+select stuname, stusex from TbStudent where stuname like '王%';
+```
+例如： 查询学生表中姓名中有王字的同学
+```
+select stuname from TbStudent where stuname like '%王%';
+```
+2）关键字： _
+作用：用来模糊查询，但是只能有一个模糊查询的位数
+
+例如：查询姓郭名字总共两个字的学生的姓名(模糊)
+```
+select stuname from TbStudent where stuname like '郭_';
+```
+
+例如：查询姓郭名字总共三个字的学生的姓名(模糊)
+```
+select stuname from TbStudent where stuname like '郭__';
+```
+
+##### 5.3 去重
+
+关键词： distinct
+作用：去除重复性的数据
+
+例如：所有学生中语文成绩（去重）
+```
+select distinct s_yuwen from TbStudent;
+```
+
+##### 5.4 判断
+
+关键词：if(字段,exp1,exp2) 或者 ifnull(字段,exp1,,exp2)
+作用：if表达式中如果字段值为真则返回exp1的值，如果为假的话，返回exp2的值
+     ifnull表达式中如果字段的值为假则返回exp1的值，如果为假的话，返回exp2的值
+
+例如： 查询男女学生的人数(分组和聚合函数)
+```
+select if(stusex, '男', '女') as `性别`, count(stusex) as `人数` from TbStudent group by stusex;
+```
+
+##### 5.5 分组聚合
+
+关键词： group by having
+作用：
+    HAVING语句通常与GROUP BY语句联合使用，用来过滤由GROUP BY语句返回的记录集。
+    HAVING语句的存在弥补了WHERE关键字不能与聚合函数联合使用的不足
+
+例如：查询平均成绩大于等于90分的学生的学号和平均成绩
+```
+select sid as `学号`, avg(score) as `平均成绩` from TbSC group by sid having avg(score)>=90;
+```
+
+##### 5.6关联
+
+定义  A INNER/LEFT/RIGHT JOIN B操作中，A表被称为左表，B表被称为右表。
+
+a) 内关联： Inner Join on
+作用：仅对满足连接条件的列进行关联，其中inner可省略
+
+b) 左外连接：Left Outer Jion on
+作用：其中outer可以省略。如A LEFT JOIN B，会输出左表A中所有的数据，同时将符合ON条件的右表B中搜索出来的结果合并到左表A表中，如果A表中存在而在B表中不存在，则结果集中会将查询的B表字段值（如此处的P.PUNISHMENT字段）设置为NULL。
+所以，LEFT JOIN的作用是：
+LEFT JOIN：从右表B中将符合ON条件的结果查询出来，合并到A表中，再作为一个结果集输出。
+
+c) 右外连接：Right Outer Jion on
+作用：其中outer可以省略，而RIGHT JOIN刚好相反，“A RIGHT JOIN B ON ……”是将符合ON条件的A表搜索结果合并到B表中，作为一个结果集输出：
 
