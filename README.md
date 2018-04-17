@@ -3,7 +3,7 @@
 
 1. [git知识库](git.md)
 2. [docker知识库](docker/docker.md)
-3. [数据库知识库]
+3. [mysql数据库知识库]
  - [第一天:基础]
    - [Mysql数据库基础语法](sql/mysql.md)
  - [第二天:提升练习]
@@ -11,7 +11,10 @@
    - [语法练习2](sql/mysql2_2.md)
  - [第三天:mysql与python交互]
    - [交互](sql/mysql3.md)
-4. Django知识库
+4. [redis知识库]
+ - [第一天:安装/基础]
+   - [rdis安装以及基础语法](sql/redis.md)
+5. Django知识库
  - [第一天:环境与创建项目]
    - [django概念介绍](django/django_pattern.md)
    - [virtualenv环境](django/python_virtualenv.md)
