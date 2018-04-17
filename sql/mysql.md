@@ -280,7 +280,7 @@ delete from student where name='xxx';
 
 语法：
 
-    alter table table_name1 add [constraint 索引名] foreign key(外键字段名) references table_name2(主键字段名);
+    alter table table_name1 add [constraint 约束名] foreign key(外键字段名) references table_name2(主键字段名);
 
 使用外键的前提：
 
@@ -291,9 +291,29 @@ delete from student where name='xxx';
 　　3. 外键的名字不能重复。
 
 　　4. 已经存在数据的字段被设为外键时，必须保证字段中的数据与父表的主键数据对应起来。
+ 
+ ##### 4.3外键约束
+ on delete 和 on update都有restrict，no action, cascade, set Null属性。现在分别对他们的属性含义做个解释。
+ 
+ 1. ON DELETE
+    restrict(约束):当在父表（即外键的来源表）中删除对应记录时，首先检查该记录是否有对应外键，如果有则不允许删除。
 
+    no action:意思同restrict.即如果存在从数据，不允许删除主数据。
 
-##### 4.3索引
+    cascade(级联):当在父表（即外键的来源表）中删除对应记录时，首先检查该记录是否有对应外键，如果有则也删除外键在子表（即包含外键的表）中的记录。
+
+    set null:当在父表（即外键的来源表）中删除对应记录时，首先检查该记录是否有对应外键，如果有则设置子表中该外键值为null（不过这就要求该外键允许取null）
+
+ 2. ON UPDATE
+     restrict(约束):当在父表（即外键的来源表）中更新对应记录时，首先检查该记录是否有对应外键，如果有则不允许更新。
+
+     no action:意思同restrict.
+
+     cascade(级联):当在父表（即外键的来源表）中更新对应记录时，首先检查该记录是否有对应外键，如果有则也更新外键在子表（即包含外键的表）中的记录。
+
+     set null:当在父表（即外键的来源表）中更新对应记录时，首先检查该记录是否有对应外键，如果有则设置子表中该外键值为null（不过这就要求该外键允许取null）。
+
+##### 4.4索引
 
 
 什么是索引：
