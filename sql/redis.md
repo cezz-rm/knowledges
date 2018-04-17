@@ -25,9 +25,9 @@ mysql作为主存储，redis作为辅助存储被用作缓存，加快访问读�
 
 ```
 
-#### 安装
+#### 1.安装
 
-##### centos7中安装redis
+##### a) centos7中安装redis
   1.由于CentOS官方yum源里面没有Redis,这里我们需要安装一个第三方的yum源,这里用了Fedora的epel仓库
     ```
       yum install epel-release
@@ -66,19 +66,19 @@ mysql作为主存储，redis作为辅助存储被用作缓存，加快访问读�
     或者
    /bin/systemctl stop  redis.service
   ```
-##### 测试
+##### b) 测试
  PING
      使用客户端向 Redis 服务器发送一个 PING ，如果服务器运作正常的话，会返回一个 PONG 。通常用于测试与服务器的连接是否仍然生效，或者用于测量延迟值。
  返回值：
      如果连接正常就返回一个 PONG ，否则返回一个连接错误。
 
 
-#### 修改 redis.conf文件
+#### 2.修改 redis.conf文件
 
-##### 配置文件
+##### a) 配置文件
   配置文件位置：redisd 配置信息在 /etc/redis.conf中
 
-##### 修改登录密码
+##### b) 修改登录密码
  在vim中通过搜索:/requirepass 可以找到如下配置
   ```
    #requirepass foobared
@@ -89,15 +89,15 @@ mysql作为主存储，redis作为辅助存储被用作缓存，加快访问读�
   ```
   然后重启
 
-##### 进入redis
+##### c) 进入redis
     直接使用redis-cli命令进入，使用auth 加密码进行验证
     如果auth密码验证失败的话提示 (error) NOAUTH Authentication required. 错误
     
-##### 退出
+##### d) 退出
     quit： 关闭连接（connection）
     
     
-#### 五中主要的类型和命令
+#### 3.五中主要的类型和命令
 
 redis是键值对的数据库，有5中主要数据类型：
 
@@ -126,7 +126,7 @@ CONFIG [get、set]    redis配置
 +inf正无穷
 
 
-###### 1）字符串类型string
+###### a）字符串类型string
 
 ```
 字符串类型是Redis的最基本类型，它可以存储任何形式的字符串。其它的四种类型都是字符串类型的不同形式。
@@ -166,7 +166,7 @@ CONFIG [get、set]    redis配置
  ```
  
 
-###### 2) 散列类型hash
+###### b) 散列类型hash
 
  ```
 设置单个：HSET                      语法：HSET key field value，不存在时返回1，存在时返回0，没有更新和插入之分
@@ -195,7 +195,7 @@ CONFIG [get、set]    redis配置
 
 ```
 
-###### 3) 列表类型（list）
+###### c) 列表类型（list）
 
 ```
 内部使用双向链表实现，所以获取越接近两端的元素速度越快，但通过索引访问时会比较慢
@@ -237,7 +237,7 @@ CONFIG [get、set]    redis配置
  
 ```
 
-###### 4) 集合类型（set）
+###### d) 集合类型（set）
 
 ```
 集合类型值具有唯一性，常用操作是向集合添加、删除、判断某个值是否存在，集合内部是使用值为空的散列表实现的。
@@ -276,7 +276,7 @@ CONFIG [get、set]    redis配置
 
 ```
 
-###### 5) 有序集合类型
+###### e) 有序集合类型
 
 ```
 添加集合元素：ZADD              语法：ZADD key [NX|XX] [CH] [INCR] score member [score member ...]，不存在添加，存在更新。
