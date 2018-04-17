@@ -12,7 +12,7 @@
  - [第三天:mysql与python交互]
    - [交互](sql/mysql3.md)
 4. [redis知识库]
- - [第一天:安装/基础]
+  - [第一天:安装/基础]
    - [rdis安装以及基础语法](sql/redis.md)
 5. Django知识库
  - [第一天:环境与创建项目]
