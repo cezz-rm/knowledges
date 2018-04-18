@@ -50,7 +50,7 @@ pip install PyMySQL
     # -*- encoding:utf-8 -*-
     import pymysql
 
-    # 打开数据库连接
+    # 打开数据库连接（connect, Connect, Connection）
     #db = pymysql.connect("localhost IP地址","root账号","password密码","TEST数据库", 3306 端口)
     db = pymysql.Connect(host='localhost', port=3306, user='root', passwd='123456', db='srs', charset='utf8')
     
