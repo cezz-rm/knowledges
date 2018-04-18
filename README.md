@@ -13,9 +13,9 @@
     - [交互](sql/mysql3.md)
 4. [redis知识库]
   - [第一天:安装/基础]
-     - [redis安装以及基础语法](sql/redis.md)
+    - [redis安装以及基础语法](sql/redis.md)
   - [第二天:订阅]
-     - [订阅](sql/redis1.md)
+    - [订阅](sql/redis1.md)
 5. Django知识库
   - [第一天:环境与创建项目]
     - [django概念介绍](django/django_pattern.md)
