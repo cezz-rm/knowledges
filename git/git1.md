@@ -33,11 +33,7 @@ master(线上分支)，dev(开发环境分支)，test(测试分支)，wanghaifei
 
 ##### git的一些基本概念
 
-###### 1. 设置全局变量
-
-![图](images/git_config.png)
-
-###### 2.git工作区域
+###### 1.git工作区域
     git工作区域分为工作区，缓存区
     工作区其实就是整个项目的文件目录，其中有很多一个隐藏文件叫.git，该文件就是git的版本库。在该.git文件中有很多配置文件，最重要的是就是stage
     或者叫index的暂存区，还有git在我们创建项目的时候默认创建了第一个master分支，以及指向该master分支的一个指针head。
@@ -51,13 +47,31 @@ master(线上分支)，dev(开发环境分支)，test(测试分支)，wanghaifei
     3. 最后一步git push origin master，就是讲我们本地分支的代码推到远程remote的master分支上
 
 
-###### 3. git提交代码
+###### 2. git提交代码
 设置了全局变量以后，在以后的每一次提交代码都会提示输入git的username和对于的密码
 ![图](images/git_push.png)
 
 ##### git秘钥设置
     1. git支持https和git两种传输协议,其中使用https协议的时候，每次pull, push都会提示要输入密码
     2. 使用ssh协议，在配置好秘钥，就可以使用无需每次输入账号密码了
+
+###### 1. 设置全局变量
+
+![图](images/git_config.png)
+
+###### 2. 生成rsa加密文件
+ a) 找到git bash可执行文件，并且运行，使用ls -a命令去查看所有的文件，包括隐藏文件，找到.ssh文件，如果没有该文件则mkdir .ssh文件夹
+ ![图](images/ssh.png)
+ b) 进入ssh文件，生成秘钥
+ ![图](images/ssh-keygen.png)
+ <br>
+ 在命令执行中连续敲三次回车即可。
+ c) 配置git中ssh秘钥
+ 首先：先查看ssh文件夹的结构，打开id_rsa.pub，并复制其中的信息
+ ![图](images/ssh-rsa-pub.png)
+ 其次：打开github，点击setting然后配置ssh秘钥
+ ![图](images/ssh-rsa-add.png)
+
 
 
 
