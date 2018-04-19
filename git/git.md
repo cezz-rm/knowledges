@@ -57,8 +57,8 @@ master(线上分支)，dev(开发环境分支)，test(测试分支)，wanghaifei
 
 ##### git秘钥设置
 
-
-
+git@github.com:coco369/knowledges.git
+https://github.com/coco369/knowledges.git
 
 ***
 
