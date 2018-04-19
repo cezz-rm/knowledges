@@ -50,6 +50,16 @@ master(线上分支)，dev(开发环境分支)，test(测试分支)，wanghaifei
     2. 第二部git commit就是讲我们缓存区中的代码提交到本地分支中，并清空缓存区域
     3. 最后一步git push origin master，就是讲我们本地分支的代码推到远程remote的master分支上
 
+
+###### 3. git提交代码
+设置了全局变量以后，在以后的每一次提交代码都会提示输入git的username和对于的密码
+![图](images/git_push.png)
+
+##### git秘钥设置
+
+
+
+
 ***
 
 ##### 使用git命令完成以下操作：
