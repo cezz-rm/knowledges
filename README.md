@@ -1,7 +1,9 @@
 # 知识库
 知识库，总结在项目中实际使用的git命令，docker部署，mongodb，mysql等知识点
 
-1. [git知识库](git/git.md)
+1. [git知识库]
+  - [git安装以及设置](git/git1.md)
+  - [git的基本命令](git/git2.md)
 2. [docker知识库](docker/docker.md)
 3. [mysql数据库知识库]
   - [第一天:基础]
