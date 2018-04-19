@@ -64,16 +64,21 @@ master(线上分支)，dev(开发环境分支)，test(测试分支)，wanghaifei
  <br>
  ![图](images/ssh.png)
  <br>
+ ***
  b) 进入ssh文件，生成秘钥
  ![图](images/ssh-keygen.png)
  <br>
  在命令执行中连续敲三次回车即可。
+ <br>
+ ***
  c) 配置git中ssh秘钥
  首先：先查看ssh文件夹的结构，打开id_rsa.pub，并复制其中的信息
  <br>
  ![图](images/ssh-rsa-pub.png)
  <br>
+ ***
  其次：打开github，点击setting然后配置ssh秘钥
+ <br>
  <br>
  ![图](images/ssh-rsa-add.png)
 
